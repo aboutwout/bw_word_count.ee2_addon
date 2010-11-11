@@ -54,11 +54,20 @@ class Bw_word_count_acc {
 
     function bw_count_words(evt)
     {  
-      var len = 0;
-      var matches = $(this).val().match(/\b/g);
-      if(matches) len = matches.length / 2;
-  
-      $(this).next('.bw-word-count').text(len + ' words');
+
+      var b = [];
+      var a = $(this).val().split(' ');
+      
+      for (i in a) {
+        if(a[i] != '')
+          b.push(a[i]);
+      }
+      
+      var len = b.length;
+      var word = (len == 1) ? ' word' : ' words';
+        
+      $(this).next('.bw-word-count').text(len + word);
+      
     }
 
 <?php	
@@ -78,11 +87,12 @@ class Bw_word_count_acc {
       display:inline-block;
       background:#B6C0C2;
       border-bottom-left-radius:3px;
-      font-size:11px;
       border-bottom-right-radius:3px;
+      -moz-border-radius:0 0 3px 3px;
+      font-size:11px;
       color:#fff;
       padding:3px 5px;
-      margin:-3px 0 0 6px
+      margin:-2px 0 0 6px
     }
 
 <?php	
