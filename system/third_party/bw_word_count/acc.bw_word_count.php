@@ -63,15 +63,15 @@ class Bw_word_count_acc {
 
 <?php	
     $buffer = ob_get_contents();
-		ob_end_clean(); 
+    ob_end_clean(); 
 
-		return $buffer;
+    return $buffer;
 
 	}
 	
-	function _css()
-	{
-	  ob_start();
+  function _css()
+  {
+    ob_start();
 ?>
 
     .bw-word-count{
@@ -87,9 +87,9 @@ class Bw_word_count_acc {
 
 <?php	
     $buffer = ob_get_contents();
-		ob_end_clean(); 
+    ob_end_clean(); 
 
-		return $buffer;
+    return $buffer;
 
 	}	
 	
